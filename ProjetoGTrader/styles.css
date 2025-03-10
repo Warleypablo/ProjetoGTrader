@@ -21,13 +21,20 @@ header {
     background-color: #2a3d66;
     padding: 15px 30px;
     color: #fff;
+    width: 100%; /* Garantindo que o cabeçalho ocupe toda a largura da tela */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
+/* Logo */
+header .logo img {
+    max-width: 150px; /* Limita a largura da logo */
+    height: auto; /* Ajusta a altura da logo proporcionalmente */
 }
 
+/* Navegação */
 header nav ul {
     list-style: none;
     display: flex;
@@ -47,9 +54,79 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Link de login */
+header nav ul li .login-link {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal de Login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Cor do fundo com opacidade */
+    overflow: auto;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a3d66;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #1a2c4d;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Conteúdo principal */
 main {
     padding: 20px 30px;
+    margin-top: 80px; /* Espaço para o cabeçalho fixo */
 }
 
 .dashboard {
